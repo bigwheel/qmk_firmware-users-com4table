@@ -2,6 +2,14 @@
 
 con4t4ble のコンセプトを受け継ぎながら、発生した問題点を改善したもの。
 
+## 使い方
+
+自分のqmk_firmwareリポジトリでsubmoduleとして参照する。
+
+```shell
+git submodule add  git@github.com:bigwheel/qmk_firmware-users-com4table.git users/com4table
+```
+
 ## 機能
 
 ### 記号入力のときは自動で日本語入力 OFF
