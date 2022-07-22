@@ -1,4 +1,4 @@
-# con4t4ble v2 keymap
+# com4table keymap
 
 con4t4ble のコンセプトを受け継ぎながら、発生した問題点を改善したもの。
 
@@ -46,3 +46,22 @@ MAC なら
 また、Halberd のように一部のキーをコンボキーにしていると、その部分はデフォルトレイヤー依存にすることはできない。
 
 両 OS コンパチキーマップにはそういった諸々の複雑さがあるため、それらを避けてファームウェア的には 1 種類の OS 用ながら簡単に PC / MAC を切り替えられる。それがこの機能の利点になる。
+
+### デフォルトのprocess_record_user宣言機能
+
+自分で定義したい場合は次の宣言を `config.h` で行う。
+
+```c
+#define CUSTOM_PROCESS_RECORD_USER
+```
+
+### Caravelle互換機能
+
+Caravelle-BLEは専用のブランチでビルドする必要があるが、そのブランチの
+ベースが数年前のqmk_firmwareであるため一部の最新関数が入っておらず、userspaceの機能定義にも支障をきたしている。
+そこで、このuserspaceの定義に必要な機能をbackportしている。
+それを使う場合は次の宣言を `config.h` で行う。
+
+```c
+#define CARAVELLE_BACKWARD_FUNC
+```
