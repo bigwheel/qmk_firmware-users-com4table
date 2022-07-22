@@ -2,6 +2,8 @@
 
 #include QMK_KEYBOARD_H
 
+#ifdef CARAVELLE_BACKWARD_FUNC
+
 // https://github.com/qmk/qmk_firmware/blob/b835171008eaeaa992a1b8e390af8bce6f5f0b8f/quantum/action.c#L989-L995
 void tap_code_delay(uint8_t code, uint16_t delay) {
   register_code(code);
@@ -16,3 +18,5 @@ void tap_code(uint8_t code) {
   tap_code_delay(code,
                  code == KC_CAPS_LOCK ? TAP_HOLD_CAPS_DELAY : TAP_CODE_DELAY);
 }
+
+#endif

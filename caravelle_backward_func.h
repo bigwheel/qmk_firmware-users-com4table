@@ -2,6 +2,8 @@
 
 #include QMK_KEYBOARD_H
 
+#ifdef CARAVELLE_BACKWARD_FUNC
+
 enum hid_keyboard_keypad_usage_legacy2 {
   // https://github.com/qmk/qmk_firmware/blob/e7931289918221081cbe2a7ea5df27a5d86324db/quantum/keycode.h#L461
   KC_LEFT_SHIFT = 0xE1,
@@ -25,3 +27,5 @@ void tap_code_delay(uint8_t code, uint16_t delay);
 
 // https://github.com/qmk/qmk_firmware/blob/b835171008eaeaa992a1b8e390af8bce6f5f0b8f/quantum/action.c#L1001-L1003
 void tap_code(uint8_t code);
+
+#endif
