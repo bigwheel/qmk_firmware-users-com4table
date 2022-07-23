@@ -2,10 +2,18 @@
 #include "util_km.h"
 #include "auto_disable_ime.h"
 #include "auto_disable_ime_timer.h"
+#ifdef BMP_MODE
+#    include "bmp.h"
+#endif
 
 #ifndef CUSTOM_PROCESS_RECORD_USER
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     process_record_user_auto_disable_ime_timer();
+
+#    ifdef BMP_MODE
+    if (process_record_user_bmp(keycode, record) == PROCESS_OVERRIDE_BEHAVIOR)
+        return PROCESS_OVERRIDE_BEHAVIOR;
+#    endif
 
     if (process_record_user_auto_disable_ime(keycode, record) == PROCESS_OVERRIDE_BEHAVIOR)
         return PROCESS_OVERRIDE_BEHAVIOR;

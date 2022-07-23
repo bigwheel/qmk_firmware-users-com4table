@@ -6,7 +6,17 @@
 #include "disable_ime.h"
 #include "util_km.h"
 
+#ifdef BMP_MODE
+#    include "keycode_str_converter.h"
+#endif
+
 bool dispel_is_pressing = false;
+
+#ifdef BMP_MODE
+const key_string_map_t custom_keys_user = {.start_kc    = KC_DISPEL,
+                                           .end_kc      = KC_DISPEL,
+                                           .key_strings = "KC_DISPEL\0"};
+#endif
 
 void disable_ime_then_restore_mods(void) {
     uint8_t real_mods_memory = get_mods();
