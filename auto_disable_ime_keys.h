@@ -21,7 +21,7 @@ const uint16_t disabling_ime_keys[] = {
     KC_GRAVE,
     // KC_COMMA,
     // KC_DOT,
-    KC_SLASH,
+    // KC_SLASH,
 
     // https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes_us_ansi_shifted.md
     KC_TILDE,
@@ -54,4 +54,5 @@ const uint16_t not_disabling_ime_keys_with_shift[] = {
     KC_RIGHT,
     KC_UP,
     KC_DOWN,
+    KC_SLASH, // = ?
 };
