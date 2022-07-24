@@ -19,3 +19,9 @@ void matrix_scan_user(void) {
     matrix_scan_user_auto_disable_ime_timer();
 }
 #endif
+
+#ifndef CUSTOM_LAYER_STATE_SET_USER
+layer_state_t layer_state_set_user(layer_state_t state) {
+  return update_tri_layer_state(state, 1, 2, 3);
+}
+#endif
