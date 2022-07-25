@@ -4,6 +4,9 @@
 
 #ifdef CARAVELLE_BACKWARD_FUNC
 
+// https://github.com/bigwheel/qmk_firmware/blob/c6c73d225a6af36efc12a785782ed196647fdd41/quantum/action_layer.h#L62
+typedef uint32_t layer_state_t;
+
 enum hid_keyboard_keypad_usage_legacy2 {
   // https://github.com/qmk/qmk_firmware/blob/e7931289918221081cbe2a7ea5df27a5d86324db/quantum/keycode.h#L461
   KC_LEFT_SHIFT = 0xE1,
