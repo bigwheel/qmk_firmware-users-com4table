@@ -73,3 +73,7 @@ Caravelle-BLEは専用のブランチでビルドする必要があるが、そ�
 ```c
 #define CARAVELLE_BACKWARD_FUNC
 ```
+
+## BMP(BLE Micro Proについて)
+
+基本的にはそのまま動くが、 `LEFT_OF_LEFT_LANG_KEY` などのキーコードは使えない(BMPのjson内では#defineを参照しないため)。
