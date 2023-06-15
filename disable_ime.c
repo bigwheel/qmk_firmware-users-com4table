@@ -7,6 +7,6 @@ void disable_ime(void) {
 #if MAC_KEYMAP == 1
     tap_code(KC_LANG2);
 #else
-    tap_code(KC_MHEN);
+    tap_code(KC_INT5);
 #endif
 }
